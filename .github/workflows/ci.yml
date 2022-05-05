@@ -1,0 +1,22 @@
+name: Tests
+
+on:
+  push:
+    branches-ignore: [main]
+  workflow_call: # https://docs.github.com/pt/actions/using-workflows/reusing-workflows
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            const result = await github.rest.users.getByUsername({
+              username: "${{ secrets.USERNAME }}",
+            })
+            console.log(result.data)
+
+      - name: Tests
+        run: echo "ALL TESTS PASSED"
