@@ -14,7 +14,7 @@ jobs:
         with:
           script: |
             const result = await github.rest.users.getByUsername({
-              username: "${{ secrets.USERNAME }}"
+              username: "${{ secrets.USERNAME }}",
             })
             console.log(result.data)
 
