@@ -16,7 +16,7 @@ jobs:
             const result = await github.rest.users.getByUsername({
               username: "${{ secrets.USERNAME }}"
             })
-            console.log(result)
+            console.log(result.data)
 
       - name: Tests
         run: echo "ALL TESTS PASSED"
