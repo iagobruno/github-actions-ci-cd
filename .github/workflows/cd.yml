@@ -7,7 +7,7 @@ on:
 jobs:
   tests:
     uses: ./.github/workflows/ci.yml
-    secrets: inherit
+    secrets: inherit # Pass all available environment variables to this workflow
 
   deploy:
     needs: tests
