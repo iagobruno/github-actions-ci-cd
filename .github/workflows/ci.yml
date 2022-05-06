@@ -3,6 +3,7 @@ name: Tests
 on:
   push:
     branches-ignore: [main]
+  pull_request:
   workflow_call: # https://docs.github.com/pt/actions/using-workflows/reusing-workflows
 
 jobs:
